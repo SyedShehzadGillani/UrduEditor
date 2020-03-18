@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Urdu Editor V1</title>
+	<!-- Custom Font --> 
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+    <!-- If You Copy This Page without the written permission of owner strict action willl be taken --> 
+    <!-- Just Give The Author's Credit Before Copying --> 
+    <!-- Developer: Syed Shehzad Gillani -->
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding:0px;
+			box-sizing: border-box;
+		}
+		.urdu-editor{
+			max-width: 600px;
+			min-width: 600px;
+			max-height: 299px;
+			min-height: 300px;
+			font-family:Jameel Noori Nastaleeq;
+			font-size:20px;
+		}
+
+	</style>
+	<script type="text/javascript">
+		function changeFont(){ 
+            let FontName = document.getElementById('Font').value;
+			document.getElementById('urdu-editor').style.fontFamily=FontName;
+		}
+		function changeSize(){
+			let fontSize = document.getElementById('fontSize').value + "px";
+			document.getElementById('urdu-editor').style.fontSize = fontSize; 
+		}
+		function changeColor(){
+			let fontColor = document.getElementById('text-color').value;
+			document.getElementById('urdu-editor').style.color = fontColor;
+		}
+		function alignLeft(){
+			document.getElementById('urdu-editor').style.textAlign = "left";
+		}
+		function alignRight(){
+			document.getElementById('urdu-editor').style.textAlign = "right";
+		}
+		function alignCenter(){
+			document.getElementById('urdu-editor').style.textAlign = "center";
+		}
+		function writeurdu(){
+			let urdutext = document.getElementById('urdu-editor').value;
+			document.write("<center><font face='Jameel Noori Nastaleeq' size='30px'>" + urdutext + "</font></center>")
+		}
+	</script>
+</head>
+<body>
+<div><br/>
+	<center>
+		<h1 style="font-family: 'PT Sans Narrow', sans-serif;"><strong>Urdu Editor V1</strong> By<font color="RED"> Syed Shehzad Gillani</font></h1><br/>
+		<div><select id="Font">
+		<option value="Jameel Noori Nastaleeq">Select Font</option>
+		<option value="Jameel Noori Nastaleeq" onclick="changeFont()">Jameel Noori Nastaleeq</option>
+		<option value="Jameel Noori Kasheeda" onclick="changeFont()">Jameel Noori Kasheeda</option>
+		</select><input type="number" id="fontSize" style="height:20px;margin-left:2%" placeholder="Text Size" onblur="changeSize()"/><input type="color" id="text-color" onchange="changeColor()" style="height:30px;margin-left:2%" /><select id="Align" style="margin-left:2%;height: 30px;">
+			<option>Align</option>
+			<option value="Left" onclick="alignLeft()">Left</option>
+			<option value="Right" onclick="alignRight()">Right</option>
+			<option value="Center" onclick="alignCenter()">Center</option>
+
+		</select></div></br/>
+		<textarea class="urdu-editor" name="urdu-editor" id="urdu-editor"></textarea><br/><br/>
+		<button style="width:600px" onclick="writeurdu()">Convert</button>
+	</center>
+</div>
+</body>
+</html>
